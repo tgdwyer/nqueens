@@ -23,7 +23,7 @@ extend :: Int -> Int -> Board -> [Board]
 extend n 0 partial = return partial
 extend n remaining partial = do
   -- Non-deterministically "choose" a value.
-  q <- [1..n]
+  q <- [0..n-1]
   -- Glue it on the front.
   let extended = q:partial
   -- Make sure it's legal.
@@ -39,7 +39,7 @@ nQueensLC n =
         -- for a given set of starting columns,
         -- prepend all the possible subsequent columns
         addQueens :: Board -> [Board]
-        addQueens cols = filter check [r:cols | r <- [1..n]]
+        addQueens cols = filter check [r:cols | r <- [0..n-1]]
 
         -- generate k columns of feasible queens
         queens :: Int -> [Board] -> [Board]
