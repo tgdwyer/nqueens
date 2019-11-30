@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "ghc",
+            "name": "ghci debug viewer Phoityne",
+            "request": "launch",
+            "internalConsoleOptions": "openOnSessionStart",
+            "workspace": "C:/Users/TIMDWY~1/Source/Repos/FIT2102/code/haskell/nqueens",
+            "startup": "C:/Users/TIMDWY~1/Source/Repos/FIT2102/code/haskell/nqueens/app/Main.hs",
+            "logFile": "C:/Users/TIMDWY~1/Source/Repos/FIT2102/code/haskell/nqueens/.vscode/phoityne.log",
+            "logLevel": "WARNING",
+            "ghciPrompt": "H>>= ",
+            "ghciCmd": "stack ghci --test --no-load --no-build --main-is TARGET",
+            "stopOnEntry": true
+        }
+    ]
+}
