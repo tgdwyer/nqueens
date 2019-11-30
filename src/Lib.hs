@@ -36,15 +36,15 @@ checkBoard qs = all check $ tails qs
 
 nQueensLC n =
     let
-        -- for a given set of starting columns,
-        -- prepend all the possible subsequent columns
-        addQueens :: Board -> [Board]
-        addQueens cols = filter check [r:cols | r <- [0..n-1]]
+        -- for a given set of columns,
+        -- prepend every column possible
+        addQueen :: Board -> [Board]
+        addQueen cols = filter check [r:cols | r <- [0..n-1]]
 
         -- generate k columns of feasible queens
         queens :: Int -> [Board] -> [Board]
         queens 0 s = s
-        queens k s = queens (k-1) (concatMap addQueens s)
+        queens k s = queens (k-1) (concatMap addQueen s)
     in
         queens n [[]]
 
